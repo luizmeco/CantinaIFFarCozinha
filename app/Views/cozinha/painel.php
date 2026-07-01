@@ -17,6 +17,11 @@
                         <span class="pedido-numero">#<?= str_pad($pedido['id'], 3, '0', STR_PAD_LEFT) ?></span>
                         <span class="pedido-hora">⏱️ <?= date('H:i', strtotime($pedido['created_at'])) ?></span>
                     </div>
+                    <?php if (!empty($pedido['totem'])): ?>
+                        <div class="pedido-totem-info" style="font-size: 0.85rem; color: #333; background: var(--mc-yellow); border: 2px solid var(--mc-black); display: inline-block; padding: 0.2rem 0.5rem; border-radius: 6px; font-weight: bold; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                            📍 <?= esc($pedido['totem']) ?>
+                        </div>
+                    <?php endif; ?>
                     
                     <div class="pedido-divider"></div>
                     
